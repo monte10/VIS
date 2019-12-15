@@ -11,11 +11,11 @@ using DTO.Tridy;
 
 namespace DatabaseConnection.Tabulky
 {
-    class ZapasyTable
+    public class ZapasyTable
     {
         private readonly string select = "SELECT zapas_id, datum, tymy_tym_id, tymy_tym_id2, rozhodci_rozhodci_id, goly_domaci, goly_hoste, komentar FROM zapasy";
         private readonly string insert = "INSERT INTO zapasy (datum, tymy_tym_id, tymy_tym_id2, rozhodci_rozhodci_id, komentar)" +
-                                "VALUES (TO_DATE(:Datum, 'dd.mm.yyyy'), :TymDomaci, :TymHoste, :Rozhodci, :Komentar)";
+                                "VALUES (:Datum, :TymDomaci, :TymHoste, :Rozhodci, :Komentar)";
         private readonly string update = "UPDATE zapasy SET goly_domaci = :GolyDomaci, goly_hoste = :GolyHoste WHERE zapas_id = :ID";
         private readonly string selectMax = "SELECT MAX(zapas_id) FROM zapasy";
 
@@ -51,6 +51,15 @@ namespace DatabaseConnection.Tabulky
                 command.Parameters.AddWithValue(":ID", id);
                 command.Parameters.AddWithValue(":GolyDomaci", domaci);
                 command.Parameters.AddWithValue(":GolyHoste", hoste);
+
+                /*
+                Console.WriteLine(id + " " + domaci + " " + hoste);
+
+                for(int i =0; i<command.Parameters.Count; i++)
+                {
+                    Console.WriteLine(command.Parameters[i].Value.ToString());
+                }
+                */
                 int ret = db.ExecuteNonQuery(command);
                 return ret;
             }

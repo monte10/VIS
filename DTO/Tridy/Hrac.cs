@@ -8,18 +8,6 @@ namespace DTO.Tridy
 {
     public class Hrac
     {
-        public Hrac(int hracId, string jmeno, string prijmeni, int cisloDresu, string pozice, int rokNarozeni, Tym tym, int trestneMinuty)
-        {
-            HracId = hracId;
-            Jmeno = jmeno;
-            Prijmeni = prijmeni;
-            CisloDresu = cisloDresu;
-            Pozice = pozice;
-            RokNarozeni = rokNarozeni;
-            Tym = tym;
-            TrestneMinuty = trestneMinuty;
-        }
-
         public int HracId { get; set; }
         public string Jmeno { get; set; }
         public string Prijmeni { get; set; }
@@ -28,5 +16,8 @@ namespace DTO.Tridy
         public int RokNarozeni { get; set; }
         public Tym Tym { get; set; }
         public int TrestneMinuty { get; set; }
+        public int Body { get; set; }
+        public int Goly { get; set; }
+        public int Asistence { get; set; }
     }
 }

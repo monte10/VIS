@@ -10,7 +10,7 @@ using DTO.Tridy;
 
 namespace DatabaseConnection.Tabulky
 {
-    class TreneriTable
+    public class TreneriTable
     {
         private readonly string select = "SELECT trener_id, jmeno, prijmeni, rok_narozeni FROM treneri";
         private readonly string insert = "INSERT INTO treneri (jmeno, prijmeni, rok_narozeni)" +
@@ -70,7 +70,7 @@ namespace DatabaseConnection.Tabulky
                     TrenerId = reader.GetInt32(++i),
                     Jmeno = reader.GetString(++i),
                     Prijmeni = reader.GetString(++i),
-                    RokNarozeni = reader.GetInt32(i)
+                    RokNarozeni = reader.GetInt32(++i)
                 };
                 data.Add(trener);
             }

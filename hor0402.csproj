@@ -49,5 +49,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ByznysVrstva\ByznysVrstva.csproj">
+      <Project>{97f308a5-45de-4a1c-a37c-c7ae90974bdf}</Project>
+      <Name>ByznysVrstva</Name>
+    </ProjectReference>
+    <ProjectReference Include="DatabaseConnection\DatabaseConnection.csproj">
+      <Project>{1f4589cb-b026-4b76-aba3-0c6325576425}</Project>
+      <Name>DatabaseConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="DTO\DTO.csproj">
+      <Project>{dca2e2dc-5834-4bae-bd94-fe7d64adea5f}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

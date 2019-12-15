@@ -11,7 +11,7 @@ using DTO.Tridy;
 
 namespace DatabaseConnection.Tabulky
 {
-    class TymyTable
+    public class TymyTable
     {
         private readonly string select = "SELECT tym_id, nazev, pocet_vyher, pocet_remiz, pocet_proher, treneri_trener_id FROM tymy";
         private readonly string update = "UPDATE tymy SET pocet_vyher = :Vyhry, pocet_remiz = :Remizy, pocet_proher = :Prohry WHERE tym_id = :ID";

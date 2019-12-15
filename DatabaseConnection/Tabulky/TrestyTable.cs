@@ -10,7 +10,7 @@ using DTO.Tridy;
 
 namespace DatabaseConnection.Tabulky
 {
-    class TrestyTable
+    public class TrestyTable
     {
         private readonly string select = "SELECT trest_id, delka, duvod, hraci_hrac_id, zapasy_zapas_id FROM tresty";
         private readonly string insert = "INSERT INTO tresty (delka, duvod, hraci_hrac_id, zapasy_zapas_id)" +

@@ -11,12 +11,12 @@ using DTO.Tridy;
 
 namespace DatabaseConnection.Tabulky
 {
-    class HraciTable
+    public class HraciTable
     {
         private readonly string select = "SELECT hrac_id, jmeno, prijmeni, cislo_dresu, pozice, rok_narozeni, tymy_tym_id, trestne_minuty FROM hraci";
         private readonly string insert = "INSERT INTO hraci (jmeno, prijmeni, cislo_dresu, pozice, rok_narozeni, tymy_tym_id)" +
                                 "VALUES (:Jmeno, :Prijmeni, :Cislo, :Pozice, :Rok, :Tym)";
-        private readonly string update = "UPDATE hraci SET testne_minuty = :Minuty WHERE hrac_id = :ID";
+        private readonly string update = "UPDATE hraci SET trestne_minuty = :Minuty WHERE hrac_id = :ID";
         private readonly string delete = "UPDATE hraci SET jmeno = 'Deleted' WHERE hrac_id = :ID";
 
         private Databaze db;
@@ -121,7 +121,7 @@ namespace DatabaseConnection.Tabulky
                     Prijmeni = reader.GetString(++i),
                     CisloDresu = reader.GetInt32(++i),
                     Pozice = reader.GetString(++i),
-                    RokNarozeni = reader.GetInt32(i)
+                    RokNarozeni = reader.GetInt32(++i)
                 };
 
                 h.Tym = new Tym

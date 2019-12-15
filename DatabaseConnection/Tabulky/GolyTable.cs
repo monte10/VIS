@@ -10,7 +10,7 @@ using DTO.Tridy;
 
 namespace DatabaseConnection.Tabulky
 {
-    class GolyTable
+    public class GolyTable
     {
         private readonly string select = "SELECT gol_id, hraci_hrac_id, zapasy_zapas_id FROM goly";
         private readonly string insert = "INSERT INTO goly (hraci_hrac_id, zapasy_zapas_id)" +
@@ -78,7 +78,7 @@ namespace DatabaseConnection.Tabulky
                     data = Read(reader);
                 }
 
-                var sorted = data.OrderBy(x => x.Zapas.ZapasId).ThenBy(x => x.GolId).ToList();
+                var sorted = data.OrderBy(x => x.GolId).ToList();
                 return sorted;
             }
         }

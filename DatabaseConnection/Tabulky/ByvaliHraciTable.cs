@@ -7,11 +7,11 @@ using DTO.Tridy;
 
 namespace DatabaseConnection.Tabulky
 {
-    class ByvaliHraciTable
+    public class ByvaliHraciTable
     {
-        private readonly string select = "SELECT hrac_id, jmeno, prijmeni, cislo_dresu, pozice, rok_narozeni FROM byvali_hraci bh";
-        private readonly string insert = "INSERT INTO byvali_hraci (jmeno, prijmeni, cislo_dresu, pozice, rok_narozeni)" +
-                                "VALUES (:Jmeno, :Prijmeni, :Cislo, :Pozice, :Rok)";
+        private readonly string select = "SELECT hrac_id, jmeno, prijmeni, cislo_dresu, pozice, rok_narozeni, datum FROM byvali_hraci bh";
+        private readonly string insert = "INSERT INTO byvali_hraci (jmeno, prijmeni, cislo_dresu, pozice, rok_narozeni, datum)" +
+                                "VALUES (:Jmeno, :Prijmeni, :Cislo, :Pozice, :Rok, :Datum)";
 
         private Databaze db;
 
@@ -33,6 +33,7 @@ namespace DatabaseConnection.Tabulky
                 command.Parameters.AddWithValue(":Cislo", b.CisloDresu);
                 command.Parameters.AddWithValue(":Pozice", b.Pozice);
                 command.Parameters.AddWithValue(":Rok", b.RokNarozeni);
+                command.Parameters.AddWithValue(":Datum", b.Datum);
                 int ret = db.ExecuteNonQuery(command);
 
                 return ret;
@@ -74,7 +75,8 @@ namespace DatabaseConnection.Tabulky
                     Prijmeni = reader.GetString(++i),
                     CisloDresu = reader.GetInt32(++i),
                     Pozice = reader.GetString(++i),
-                    RokNarozeni = reader.GetInt32(++i)
+                    RokNarozeni = reader.GetInt32(++i),
+                    Datum = reader.GetDateTime(++i)
                 };
                 data.Add(bh);
             }

@@ -8,15 +8,6 @@ namespace DTO.Tridy
 {
     public class Trest
     {
-        public Trest(int trestId, int delka, string duvod, Hrac hrac, Zapas zapas)
-        {
-            TrestId = trestId;
-            Delka = delka;
-            Duvod = duvod;
-            Hrac = hrac;
-            Zapas = zapas;
-        }
-
         public int TrestId { get; set; }
         public int Delka { get; set; }
         public string Duvod { get; set; }
