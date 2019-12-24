@@ -84,6 +84,10 @@
       <Project>{97f308a5-45de-4a1c-a37c-c7ae90974bdf}</Project>
       <Name>ByznysVrstva</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{dca2e2dc-5834-4bae-bd94-fe7d64adea5f}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

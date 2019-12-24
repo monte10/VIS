@@ -115,7 +115,7 @@ namespace ByznysVrstva
             List<Tym> tymy = tymyTable.Select();
             Tym domaci = new Tym();
             Tym hoste = new Tym();
-            
+
             if (zapas.GolyDomaci > zapas.GolyHoste)
             {
                 for (int i = 0; i < tymy.Count; i++)
@@ -170,15 +170,15 @@ namespace ByznysVrstva
         }
 
         public void CheckHattrick(Zapas zapas)
-        { 
+        {
             GolyTable golyTable = new GolyTable();
             HattrickTable hattrickTable = new HattrickTable();
             List<Gol> goly = golyTable.Select();
             var slovnik = new Dictionary<int, int>();
 
-            for(int i =0; i<goly.Count; i++)
+            for (int i = 0; i < goly.Count; i++)
             {
-                if(goly[i].Zapas.ZapasId == zapas.ZapasId)
+                if (goly[i].Zapas.ZapasId == zapas.ZapasId)
                 {
                     if (slovnik.ContainsKey(goly[i].Hrac.HracId))
                     {
@@ -191,22 +191,32 @@ namespace ByznysVrstva
                 }
             }
 
-            for(int i = 0; i<slovnik.Count; i++)
+            for (int i = 0; i < slovnik.Count; i++)
             {
                 if (slovnik[slovnik.Keys.ElementAt(i)] > 2)
                 {
                     hattrickTable.Insert(slovnik.Keys.ElementAt(i), zapas.Datum);
-                   
+
                 }
             }
 
         }
 
-        public void SmazHrace(Hrac h)
+        public void SmazHrace(int id)
         {
             HraciTable hraciTable = new HraciTable();
             ByvaliHraciTable byvaliHraciTable = new ByvaliHraciTable();
+            List<Hrac> hraci = hraciTable.Select();
+            Hrac h = new Hrac();
 
+            for (int i = 0; i < hraci.Count; i++)
+            {
+                if (hraci[i].HracId == id)
+                {
+                    h = hraci[i];
+                    break;
+                }
+            }
 
             ByvalyHrac byvalyHrac = new ByvalyHrac
             {
@@ -219,7 +229,7 @@ namespace ByznysVrstva
             };
 
             hraciTable.Delete(h.HracId);
-            byvaliHraciTable.Insert(byvalyHrac);                                 
+            byvaliHraciTable.Insert(byvalyHrac);
         }
 
         public void PridejHrace(Hrac h)

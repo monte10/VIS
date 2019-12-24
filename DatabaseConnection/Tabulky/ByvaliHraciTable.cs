@@ -20,8 +20,6 @@ namespace DatabaseConnection.Tabulky
             db = new Databaze();
         }
 
-
-
         public int Insert(ByvalyHrac b)
         {
             using (db.GetConnection())

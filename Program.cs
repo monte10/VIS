@@ -13,7 +13,7 @@ namespace hor0402
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine(DateTime.Now.ToShortDateString());
         }
     }
 }

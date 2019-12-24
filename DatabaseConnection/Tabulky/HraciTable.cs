@@ -69,25 +69,6 @@ namespace DatabaseConnection.Tabulky
             }
         }
 
-        public List<Hrac> SelectTrestne()
-        {
-            using (db.GetConnection())
-            {
-                db.Connect();
-                OracleCommand command = db.CreateCommand(select);
-
-                Collection<Hrac> data;
-
-                using (var reader = command.ExecuteReader())
-                {
-                    data = Read(reader);
-                }
-
-                var sorted = data.OrderByDescending(x => x.TrestneMinuty).ToList();
-                return sorted;
-            }
-        }
-
         public List<Hrac> Select()
         {
             using (db.GetConnection())

@@ -41,8 +41,10 @@ namespace DatabaseConnection.Database
             if (Connection.State != System.Data.ConnectionState.Open)
             {
                 //ret = Connect(ConfigurationManager.ConnectionStrings["ConnectionStringOracle"].ConnectionString);
-                ret = Connect("Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=dbsys.cs.vsb.cz)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=oracle.dbsys.cs.vsb.cz)));User Id=hor0402;Password=kZtothRHMv;Connection Timeout=45;");
+                Console.WriteLine("Connecting to database");
+                ret = Connect("Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=dbsys.cs.vsb.cz)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=oracle.dbsys.cs.vsb.cz)));User Id=hor0402;Password=kZtothRHMv;Connection Timeout=15;");
             }
+            Console.WriteLine("Connected");
 
             return ret;
         }

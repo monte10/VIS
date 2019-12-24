@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-6" style="border:1px solid black;">
+        <h4>Tabulka průběžného stavu soutěže</h4>
+
+        <table style="width:65%">
+            <tr>
+                <th>Tým</th>
+                <th>Výhry</th>
+                <th>Remízy</th>
+                <th>Prohry</th>
+                <th>Body</th>
+            </tr>
+            @for (int i = 1; i < 6; i++)
+            {
+                var tym = Model.Tymy[i-1];
+                <tr>
+                    <td><strong class="text-info">@i. @tym.Nazev</strong></td>
+                    <td>@tym.PocetVyher</td>
+                    <td>@tym.PocetRemiz</td>
+                    <td>@tym.PocetProher</td>
+                    <td>@tym.Body</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <div class="col-md-6" style="border:1px solid black;">
+        <h4>Tabulka kanadského bodování</h4>
+
+        <table style="width:65%">
+            <tr>
+                <th>Hráč</th>
+                <th>Góly</th>
+                <th>Asistence</th>
+                <th>Body</th>
+            </tr>
+            @for (int i = 1; i < 6; i++)
+            {
+                var hrac = Model.Kanada[i-1];
+                <tr>
+                    <td><strong class="text-info">@i. @hrac.Jmeno @hrac.Prijmeni</strong></td>
+                    <td>@hrac.Goly</td>
+                    <td>@hrac.Asistence</td>
+                    <td>@hrac.Body</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>
+
+@for (int i = 0; i < 6; i++)
+{
+    <div class="row">
+        <div class="col-md-6">
+            <h4> </h4>
+        </div>
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md-6" style="border:1px solid black;">
+        <h4>Tabulka nejvíce skórujících týmů</h4>
+
+        <table style="width:90%">
+            <tr>
+                <th>Tým</th>
+                <th>Počet gólů</th>
+            </tr>
+            @for (int i = 1; i < 6; i++)
+            {
+                var gol = Model.Goly[i-1];
+                <tr>
+                    <td><strong class="text-info">@i. @gol.Nazev</strong></td>
+                    <td>@gol.Goly</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <div class="col-md-6" style="border:1px solid black;">
+        <h4>Tabulka hráčů s největším počtem trestných minut</h4>
+
+        <table style="width:90%">
+            <tr>
+                <th>Hráč</th>
+                <th>Počet trestných minut</th>
+            </tr>
+            @for (int i = 1; i < 6; i++)
+            {
+                var hrac = Model.Tresty[i-1];
+                <tr>
+                    <td><strong class="text-info">@i. @hrac.Jmeno @hrac.Prijmeni</strong></td>
+                    <td>@hrac.TrestneMinuty</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

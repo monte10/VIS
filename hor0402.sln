@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopApp", "DesktopApp\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByznysVrstva", "ByznysVrstva\ByznysVrstva.csproj", "{97F308A5-45DE-4A1C-A37C-C7AE90974BDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{255FF9D1-F742-4072-9228-0DBD8A91D1B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{97F308A5-45DE-4A1C-A37C-C7AE90974BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97F308A5-45DE-4A1C-A37C-C7AE90974BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97F308A5-45DE-4A1C-A37C-C7AE90974BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{255FF9D1-F742-4072-9228-0DBD8A91D1B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{255FF9D1-F742-4072-9228-0DBD8A91D1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{255FF9D1-F742-4072-9228-0DBD8A91D1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{255FF9D1-F742-4072-9228-0DBD8A91D1B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

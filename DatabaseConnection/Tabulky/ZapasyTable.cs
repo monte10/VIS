@@ -52,9 +52,9 @@ namespace DatabaseConnection.Tabulky
                 command.Parameters.AddWithValue(":GolyDomaci", domaci);
                 command.Parameters.AddWithValue(":GolyHoste", hoste);
 
-                /*
+                
                 Console.WriteLine(id + " " + domaci + " " + hoste);
-
+                /*
                 for(int i =0; i<command.Parameters.Count; i++)
                 {
                     Console.WriteLine(command.Parameters[i].Value.ToString());
@@ -64,58 +64,6 @@ namespace DatabaseConnection.Tabulky
                 return ret;
             }
         }
-
-        /*
-        public int UlozZapas(int cislo = -1)
-        {
-            using (db.GetConnection())
-            {
-                int Id;
-                if (cislo == -1)
-                {
-                    Id = this.PosledniZapas();
-                }
-                else
-                {
-                    Id = cislo;
-                }
-
-                db.Connect();
-                OracleCommand command = db.CreateCommand("AKTUALIZUJZAPAS");
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.Parameters.Add("p_zapas_id", OracleDbType.Int32).Value = Id;
-
-                var ret = command.ExecuteNonQuery();
-
-                db.Connect();
-                command = db.CreateCommand("AKTUALIZUJVYLOUCENI");
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.Parameters.Add("p_zapas_id", OracleDbType.Int32).Value = Id;
-
-                ret = command.ExecuteNonQuery();
-
-                db.Connect();
-                command = db.CreateCommand("AKTUALIZACEHATTRICK");
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.Parameters.Add("p_zapas_id", OracleDbType.Int32).Value = Id;
-
-                ret = command.ExecuteNonQuery();
-
-                db.Connect();
-                command = db.CreateCommand("AKTUALIZACETYMU");
-                command.CommandType = CommandType.StoredProcedure;
-
-                command.Parameters.Add("p_zapas_id", OracleDbType.Int32).Value = Id;
-
-                ret = command.ExecuteNonQuery();
-
-                return ret;
-            }
-        }
-        */
 
         public int PosledniZapas()
         {
